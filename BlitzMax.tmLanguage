@@ -269,17 +269,23 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.blitzmax</string>
+					<string>support.function.any-method.blitzmax</string>
 				</dict>
 			</dict>
 			<key>match</key>
 			<string>(?i:(\b[a-zA-Z_][a-zA-Z0-9_]*?\b)(?=\(\)?))</string>
 			<key>name</key>
-			<string>support.function.blitzmax</string>
+			<string>meta.function-call.blitzmax</string>
 		</dict>
 		<dict>
 			<key>include</key>
 			<string>#builtinTypes</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>[a-zA-Z_][a-zA-Z0-9_]*</string>
+			<key>name</key>
+			<string>variable.other.blitzmax</string>
 		</dict>
 	</array>
 	<key>repository</key>
