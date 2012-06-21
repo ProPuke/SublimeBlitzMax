@@ -184,6 +184,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>(?i:\b(Import|Include)\b)</string>
+			<key>name</key>
+			<string>keyword.control.import.include.blitzmax</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>(?i:\b(New|Self|Super|Min|Max|Not|Abs|Sgn|SizeOf|Varptr|And|Or|)\b)</string>
 			<key>name</key>
 			<string>keyword.operator.blitzmax</string>
