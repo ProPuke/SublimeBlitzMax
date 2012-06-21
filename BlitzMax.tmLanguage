@@ -172,13 +172,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\s*\b(Function|Type|End Function|End Type)\b\s*)</string>
+			<string>(?i:\s*\b(Function|Type|End\s*Function|End\s*Type)\b\s*)</string>
 			<key>name</key>
 			<string>storage.type.blitzmax</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(SuperStrict|Strict|If|Then|Else|ElseIf|Else If|End If|While|Wend|For|To|Case|Select|End Select|Return|Continue|Until|Loop|Next|End|Exit)\b)</string>
+			<string>(?i:\b(SuperStrict|Strict|If|Then|Else|ElseIf|Else\s*If|End\s*If|While|Wend|For|To|Case|Select|End\s*Select|Return|Continue|Until|Loop|Next|End|Exit)\b)</string>
 			<key>name</key>
 			<string>keyword.control.blitzmax</string>
 		</dict>
