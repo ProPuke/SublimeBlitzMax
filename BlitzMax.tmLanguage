@@ -190,7 +190,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(New|Self|Super|Min|Max|Not|Abs|Sgn|SizeOf|Varptr|And|Or|)\b)</string>
+			<string>(?i:\b(New|Self|Super|Min|Max|Not|Abs|Sgn|SizeOf|Varptr)\b)</string>
 			<key>name</key>
 			<string>keyword.operator.blitzmax</string>
 		</dict>
@@ -205,6 +205,12 @@
 			<string>(\-|\+|\*|/|Mod|Shl|Shr|Sar)</string>
 			<key>name</key>
 			<string>keyword.operator.arithmetic.blitzmax</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i:=|&lt;&gt;|&lt;|&gt;|&lt;=|&gt;=|And|Or)</string>
+			<key>name</key>
+			<string>keyword.operator.comparison.blitzmax</string>
 		</dict>
 		<dict>
 			<key>match</key>
