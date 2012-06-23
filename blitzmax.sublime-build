@@ -1,0 +1,14 @@
+{
+	"cmd": {
+		"build":{
+			"cmd": ["bmk","makeapp","-r","$file"]
+		},
+		"build and run":{
+			"cmd": ["bmk","makeapp","-x","-r","$file"]
+		}
+	},
+	"file_regex": "^\\[(.*?);([0-9]+)",
+	"selector": "source.blitzmax",
+	"default_task": "build and run",
+	"target": "multi_task_exec"
+}
