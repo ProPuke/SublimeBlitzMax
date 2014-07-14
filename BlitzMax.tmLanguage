@@ -142,7 +142,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?i:end\s+rem)</string>
+			<string>(?i:end\s?rem)</string>
 			<key>name</key>
 			<string>comment.block.blitzmax</string>
 		</dict>
