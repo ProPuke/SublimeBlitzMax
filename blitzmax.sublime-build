@@ -1,14 +1,23 @@
 {
-	"cmd": {
-		"build":{
-			"cmd": ["bmk","makeapp","-r","$file"]
-		},
-		"build and run":{
-			"cmd": ["bmk","makeapp","-x","-r","$file"]
-		}
-	},
 	"file_regex": "^\\[(.*?);([0-9]+)",
 	"selector": "source.blitzmax",
-	"default_task": "build and run",
-	"target": "multi_task_exec"
+	"cmd": ["bmk","makeapp","-a","-x","$file"],
+	"variants": [
+		{
+			"name": "build gui release",
+			"cmd": ["bmk","makeapp","-a","-r","-t","gui","$file"]
+		},
+		{
+			"name": "build and run gui release",
+			"cmd": ["bmk","makeapp","-a","-x","-r","-t","gui","$file"]
+		},
+		{
+			"name": "build console release",
+			"cmd": ["bmk","makeapp","-a","-r","-t","console","$file"]
+		},
+		{
+			"name": "build and run console release",
+			"cmd": ["bmk","makeapp","-a","-x","-r","-t","console","$file"]
+		}
+	]
 }
