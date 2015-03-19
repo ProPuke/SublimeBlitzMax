@@ -53,34 +53,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>^(?= )</string>
-			<key>end</key>
-			<string>(?=[^ ])</string>
-			<key>name</key>
-			<string>meta.leading-space</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>meta.odd-tab.spaces</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>meta.even-tab.spaces</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(  )(  )?</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -96,21 +68,26 @@
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.parameters.blitzmax</string>
+					<string>storage.type.source.blitzmax</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>variable.parameter.function.blitzmax</string>
+					<string>punctuation.definition.parameters.blitzmax</string>
 				</dict>
 				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.function.blitzmax</string>
+				</dict>
+				<key>6</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.parameters.blitzmax</string>
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>^\s*((?i:function))\s*([a-zA-Z_]\w*)\s*(\()([^)]*)(\)).*\n?</string>
+			<string>^\s*((?i:function|method))\s*([a-zA-Z_]\w*(?:@|@@|%|%%|#|!|\$|\:([a-zA-Z_]\w*))?)\s*(\()([^)]*)(\)).*</string>
 			<key>name</key>
 			<string>meta.function.blitzmax</string>
 		</dict>
@@ -132,7 +109,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?i:rem)</string>
+			<string>\b(?i:rem)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -142,7 +119,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?i:end\s*rem)</string>
+			<string>\b(?i:end\s*rem)\b</string>
 			<key>name</key>
 			<string>comment.block.blitzmax</string>
 		</dict>
@@ -166,31 +143,31 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?i:(Global|Local|Field|Const)\s*\b([a-zA-Z_]\w*\b)\s*(?:\:([a-zA-Z_]\w*))\s*)</string>
+			<string>\b(?i:(Global|Local|Field|Const)\s*\b([a-zA-Z_]\w*\b)\s*(?:\:([a-zA-Z_]\w*))?\s*)</string>
 			<key>name</key>
 			<string>variable.other.dim.blitzmax</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\s*\b(Function|Type|End\s*Function|End\s*Type)\b\s*)</string>
+			<string>(?i:\s*\b(Functiony|Method|Type|End\s*Function|End\s*Method|End\s*Type)\b\s*)</string>
 			<key>name</key>
 			<string>storage.type.blitzmax</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(SuperStrict|Strict|If|Then|Else|ElseIf|Else\s*If|End\s*If|While|Wend|For|To|Case|Select|End\s*Select|Return|Continue|Until|Loop|Next|End|Exit)\b)</string>
+			<string>\b(?i:(SuperStrict|Strict|If|Then|Else|ElseIf|Else\s*If|End\s*If|While|Wend|For|To|Case|Select|End\s*Select|Return|Continue|Until|Loop|Next|End|Exit))\b</string>
 			<key>name</key>
 			<string>keyword.control.blitzmax</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(Import|Include)\b)</string>
+			<string>\b(?i:Import|Include)\b</string>
 			<key>name</key>
 			<string>keyword.control.import.include.blitzmax</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(New|Self|Super|Min|Max|Not|Abs|Sgn|SizeOf|Varptr)\b)</string>
+			<string>\b(?i:New|Self|Super|Min|Max|Not|Abs|Sgn|SizeOf|Varptr)\b</string>
 			<key>name</key>
 			<string>keyword.operator.blitzmax</string>
 		</dict>
@@ -208,25 +185,25 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:=|&lt;&gt;|&lt;|&gt;|&lt;=|&gt;=|And|Or)</string>
+			<string>\b(?i:=|&lt;&gt;|&lt;|&gt;|&lt;=|&gt;=|And|Or)\b</string>
 			<key>name</key>
 			<string>keyword.operator.comparison.blitzmax</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(Global|Local|Const)\b)</string>
+			<string>\b(?i:Global|Local|Const)\b</string>
 			<key>name</key>
 			<string>storage.modifier.blitzmax</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(Global|Local|Const)\b)</string>
+			<string>\b(?i:Global|Local|Const)\b</string>
 			<key>name</key>
 			<string>storage.type.source.blitzmax</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\s*\b(Null|Pi|True|False)\b)</string>
+			<string>(?i:\s*\b(Null|Pi|True|False))\b</string>
 			<key>name</key>
 			<string>constant.language.blitzmax</string>
 		</dict>
@@ -271,7 +248,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(TLink|TMap)\b)</string>
+			<string>\b(?i:TLink|TMap)\b</string>
 			<key>name</key>
 			<string>support.type.blitzmax</string>
 		</dict>
@@ -285,7 +262,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?i:(\b[a-zA-Z_][a-zA-Z0-9_]*?\b)(?=\(\)?))</string>
+			<string>^\s*(?i:(\b[a-zA-Z_][a-zA-Z0-9_]*?\b)(\(\))?)$</string>
 			<key>name</key>
 			<string>meta.function-call.blitzmax</string>
 		</dict>
