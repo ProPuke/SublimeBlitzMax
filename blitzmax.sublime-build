@@ -3,7 +3,8 @@
 	"selector": "source.blitzmax",
 	"cmd": ["bmk","makeapp","-a","-x","-o","$file_base_name.debug","$file"],
 	"osx": {
-		"cmd": ["bmk","makeapp","-a","-x","-t","gui","-o","$file_base_name.debug","$file"],
+		"path": "${file_path}",
+		"cmd": ["bmk","makeapp","-a","-x","-t","gui","-o","$file_base_name.debug","$file"]
 	},
 	"variants": [
 		{
@@ -21,8 +22,8 @@
 		{
 			"name": "build and run console release",
 			"cmd": ["bmk","makeapp","-a","-x","-r","-t","console","$file"],
-			"path": "${file_path}",
 			"osx": {
+				"path": "${file_path}",
 				"shell_cmd": "osascript -a 'tell app \"Terminal\" to do script \"bmk makeapp -a -x -t console -a $file\"'"
 			}
 		}
