@@ -1,7 +1,10 @@
 {
-	"file_regex": "^\\[(.*?);([0-9]+)",
+	"file_regex": "^\\[(.*?);([0-9]+);([0-9]+)\\]$",
 	"selector": "source.blitzmax",
-	"cmd": ["bmk","makeapp","-a","-x","$file"],
+	"cmd": ["bmk","makeapp","-a","-x","-o","$file_base_name.debug","$file"],
+	"osx": {
+		"cmd": ["bmk","makeapp","-a","-x","-t","gui","-o","$file_base_name.debug","$file"],
+	},
 	"variants": [
 		{
 			"name": "build gui release",
@@ -17,7 +20,11 @@
 		},
 		{
 			"name": "build and run console release",
-			"cmd": ["bmk","makeapp","-a","-x","-r","-t","console","$file"]
+			"cmd": ["bmk","makeapp","-a","-x","-r","-t","console","$file"],
+			"path": "${file_path}",
+			"osx": {
+				"shell_cmd": "osascript -a 'tell app \"Terminal\" to do script \"bmk makeapp -a -x -t console -a $file\"'"
+			}
 		}
 	]
 }
